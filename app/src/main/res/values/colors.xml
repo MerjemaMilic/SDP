@@ -5,6 +5,10 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="textcolor">#C5BEBE</color>
     <color name="background">#E5E5E5</color>
+    <color name="pink">#BB8181</color>
+    <color name="babypink">#DFB2B2</color>
+    <color name="darkpink">#9C5B5B</color>
+    <color name="graylight">#FAFAFA</color>
 
 
 </resources>

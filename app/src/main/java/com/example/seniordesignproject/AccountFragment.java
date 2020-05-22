@@ -1,9 +1,19 @@
 package com.example.seniordesignproject;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,7 +24,46 @@ public class AccountFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_account,container,false);
+        View view = inflater.inflate(R.layout.fragment_account, container, false);
+        Button button = (Button) view.findViewById(R.id.logout);
+        ImageView profile = (ImageView) view.findViewById(R.id.profile_icon);
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+        FirebaseAuth mFirebaseAuth;
+        FirebaseAuth.AuthStateListener mAuthStateListener;
+        final TextView username;
+        username = view.findViewById(R.id.username_text);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            String name = user.getEmail();
+            username.setText(name);
+            // User is signed in
+        } else {
+            // No user is signed in
+        }
+
+      //  Toast.makeText(getActivity(), currentFirebaseUser.getEmail(), Toast.LENGTH_SHORT).show();
+        //username = currentFirebaseUser.getEmail();
+        // (this, "" + currentFirebaseUser.getUid(), Toast.LENGTH_SHORT).show();
+
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    FirebaseAuth.getInstance().signOut();
+                    Intent intent = new Intent(getActivity(), MainActivity.class);
+                    startActivity(intent);
+                }
+            });
+         
+
+
+        return view;
+
+        }
 
     }
-}

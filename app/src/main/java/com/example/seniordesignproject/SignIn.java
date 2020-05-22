@@ -49,6 +49,7 @@ public class SignIn extends AppCompatActivity {
                     Toast.makeText(SignIn.this, "Please login", Toast.LENGTH_SHORT).show();
 
                 }
+
             }
         };
         login.setOnClickListener(new View.OnClickListener() {
@@ -94,8 +95,10 @@ public class SignIn extends AppCompatActivity {
                         startActivity(inttoAdmin);
                     }
                 }
+
             }
         });
+
         register = findViewById(R.id.register_button);
         register.setOnClickListener(new View.OnClickListener() {
             @Override

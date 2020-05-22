@@ -30,15 +30,9 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
-        logoutButton = findViewById(R.id.logout);
-        logoutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                Intent intToMain = new Intent(HomeActivity.this,MainActivity.class);
-                startActivity(intToMain);
-            }
-        });
+        if (savedInstanceState == null) {
+            bottomNav.setSelectedItemId(R.id.nav_profile); // change to whichever id should be default
+        }
 
 
     }

@@ -1,52 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background">
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="330dp"
-        android:background="@drawable/gradientbackground"
-        android:orientation="vertical"
-        tools:ignore="MissingConstraints">
-
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="172dp"
-            android:layout_height="242dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/cactus"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-        <TextView
-            android:id="@+id/profileusernametext"
-            android:layout_width="254dp"
-            android:layout_height="39dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:fontFamily="@font/open_sans_bold"
-            android:gravity="center"
-            android:text="Username"
-            android:textColor="@color/darkpink"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView5" />
-
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/textView6"
@@ -58,28 +17,6 @@
         android:text="Name"
         android:textColor="@color/pink"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
-
-    <View
-        android:id="@+id/view"
-        android:layout_width="356dp"
-        android:layout_height="1dp"
-        android:layout_marginTop="100dp"
-        android:background="@color/darkpink"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
-
-    <View
-        android:id="@+id/view2"
-        android:layout_width="356dp"
-        android:layout_height="1dp"
-        android:layout_marginTop="228dp"
-        android:background="@color/darkpink"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
 
@@ -127,7 +64,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="44dp"
         android:fontFamily="@font/open_sans_semibold"
-        android:text="Number of Reviews:"
+        android:text="Number of reviews:"
         android:textColor="@color/pink"
         android:textSize="19.5sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -141,9 +78,69 @@
         android:layout_marginTop="32dp"
         android:fontFamily="@font/open_sans_bold"
         android:text="0"
-        android:textColor="@color/pink"
         android:textSize="30sp"
         app:layout_constraintStart_toEndOf="@+id/numberofreviews"
         app:layout_constraintTop_toBottomOf="@+id/lastname_text" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="356dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="228dp"
+        android:background="@color/darkpink"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="356dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="100dp"
+        android:background="@color/darkpink"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="330dp"
+        android:background="@drawable/gradientbackground"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="172dp"
+            android:layout_height="242dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/cactus"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/profileusernametext"
+            android:layout_width="254dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/open_sans_bold"
+            android:gravity="center"
+            android:text="Username"
+            android:textColor="@color/darkpink"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

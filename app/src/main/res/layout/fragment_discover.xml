@@ -4,8 +4,127 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background">
+    android:background="@drawable/ng2">
 
+
+   <Button
+       android:id="@+id/banjaluka_button"
+       android:layout_width="342dp"
+       android:layout_height="42dp"
+       android:layout_marginStart="32dp"
+       android:layout_marginTop="30dp"
+       android:background="@color/discover"
+       android:hint="BANJA LUKA"
+       android:text="BANJA LUKA"
+       android:textColor="@color/textcolor"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+   <Button
+       android:id="@+id/bihac_button"
+       android:layout_width="342dp"
+       android:layout_height="42dp"
+       android:layout_marginStart="32dp"
+       android:layout_marginTop="16dp"
+       android:background="@color/discover"
+       android:text="BIHAĆ"
+       android:textColor="@color/textcolor"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/banjaluka_button" />
+
+   <Button
+       android:id="@+id/bosanskagradiska_button2"
+       android:layout_width="342dp"
+       android:layout_height="42dp"
+       android:layout_marginStart="32dp"
+       android:layout_marginTop="140dp"
+       android:background="@color/discover"
+       android:text="bosanska gradiška"
+       android:textColor="@color/textcolor"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/banjaluka_button" />
+
+   <Button
+       android:id="@+id/cazin_button"
+       android:layout_width="342dp"
+       android:layout_height="42dp"
+       android:layout_marginStart="32dp"
+       android:layout_marginTop="196dp"
+       android:background="@color/discover"
+       android:text="cazin"
+       android:textColor="@color/textcolor"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/banjaluka_button" />
+
+   <Button
+       android:id="@+id/capljina_button"
+       android:layout_width="342dp"
+       android:layout_height="42dp"
+       android:layout_marginStart="32dp"
+       android:layout_marginTop="256dp"
+       android:background="@color/discover"
+       android:text="čapljina"
+       android:textColor="@color/textcolor"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/banjaluka_button" />
+
+   <Button
+       android:id="@+id/doboj_button"
+       android:layout_width="342dp"
+       android:layout_height="42dp"
+       android:layout_marginStart="32dp"
+       android:layout_marginTop="316dp"
+       android:background="@color/discover"
+       android:text="doboj"
+       android:textColor="@color/textcolor"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/banjaluka_button" />
+
+   <Button
+       android:id="@+id/gorazde_button"
+       android:layout_width="342dp"
+       android:layout_height="42dp"
+       android:layout_marginStart="32dp"
+       android:layout_marginTop="380dp"
+       android:background="@color/discover"
+       android:text="goražde"
+       android:textColor="@color/textcolor"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/banjaluka_button" />
+
+   <Button
+       android:id="@+id/bijeljina_button"
+       android:layout_width="342dp"
+       android:layout_height="42dp"
+       android:layout_marginStart="32dp"
+       android:layout_marginTop="80dp"
+       android:background="@color/discover"
+       android:text="BIJELJINA"
+       android:textColor="@color/textcolor"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/banjaluka_button" />
+
+   <LinearLayout
+       android:id="@+id/linearLayout"
+       android:layout_width="404dp"
+       android:layout_height="59dp"
+       android:layout_margin="20dp"
+       android:background="@drawable/shape"
+       android:orientation="horizontal"
+       android:padding="7dp"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintVertical_bias="0.121">
+
+      <SearchView
+          android:layout_width="388dp"
+          android:layout_height="wrap_content"
+          android:background="#9FC4C4C4"
+          android:iconifiedByDefault="false"
+          android:queryHint="Search for cities" />
+   </LinearLayout>
 
    <TextView
        android:id="@+id/discover_text"
@@ -19,157 +138,24 @@
        android:text="Discover"
        android:textColor="#BB8181"
        android:textSize="40sp"
+       app:layout_constraintBottom_toTopOf="@+id/linearLayout"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintHorizontal_bias="0.0"
        app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toTopOf="parent" />
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintVertical_bias="0.0" />
 
-   <ImageView
-       android:id="@+id/imageView4"
-       android:layout_width="35dp"
-       android:layout_height="35dp"
-       android:layout_marginStart="16dp"
-       android:tint="#DCA3A3"
+   <ScrollView
+       android:layout_width="409dp"
+       android:layout_height="28dp"
        app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/discover_text"
-       app:srcCompat="@drawable/search" />
+       app:layout_constraintTop_toTopOf="parent">
 
-   <TextView
-       android:id="@+id/search_text"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_marginStart="16dp"
-       android:fontFamily="@font/open_sans_semibold"
-       android:text="@android:string/search_go"
-       android:textColor="#BB8181"
-       android:textSize="22sp"
-       app:layout_constraintStart_toEndOf="@+id/imageView4"
-       app:layout_constraintTop_toBottomOf="@+id/discover_text" />
-
-   <EditText
-       android:id="@+id/search_input"
-       android:layout_width="305dp"
-       android:layout_height="41dp"
-       android:layout_marginStart="16dp"
-       android:layout_marginTop="16dp"
-       android:background="#DCA39999"
-       android:ems="10"
-       android:inputType="textPersonName"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/search_text" />
-
-   <Button
-       android:id="@+id/search_button"
-       android:layout_width="70dp"
-       android:layout_height="41dp"
-       android:layout_marginStart="4dp"
-       android:layout_marginTop="16dp"
-       android:layout_marginEnd="16dp"
-       android:background="#BB8181"
-       android:fontFamily="@font/open_sans_bold"
-       android:text="@android:string/search_go"
-       android:textColor="#90FFFFFF"
-       android:textSize="15sp"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintHorizontal_bias="0.0"
-       app:layout_constraintStart_toEndOf="@+id/search_input"
-       app:layout_constraintTop_toBottomOf="@+id/search_text" />
-
-   <Button
-       android:id="@+id/banjaluka_button"
-       android:layout_width="342dp"
-       android:layout_height="42dp"
-       android:layout_marginStart="32dp"
-       android:layout_marginTop="32dp"
-       android:background="#DCA39999"
-       android:text="BANJA LUKA"
-       android:textColor="#90FFFFFF"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/search_input" />
-
-   <Button
-       android:id="@+id/bihac_button"
-       android:layout_width="342dp"
-       android:layout_height="42dp"
-       android:layout_marginStart="32dp"
-       android:layout_marginTop="16dp"
-       android:background="#DCA39999"
-       android:text="BIHAĆ"
-       android:textColor="#90FFFFFF"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/banjaluka_button" />
-
-   <Button
-       android:id="@+id/bosanskagradiska_button2"
-       android:layout_width="342dp"
-       android:layout_height="42dp"
-       android:layout_marginStart="32dp"
-       android:layout_marginTop="140dp"
-       android:background="#DCA39999"
-       android:text="bosanska gradiška"
-       android:textColor="#90FFFFFF"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/banjaluka_button" />
-
-   <Button
-       android:id="@+id/cazin_button"
-       android:layout_width="342dp"
-       android:layout_height="42dp"
-       android:layout_marginStart="32dp"
-       android:layout_marginTop="196dp"
-       android:background="#DCA39999"
-       android:text="cazin"
-       android:textColor="#90FFFFFF"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/banjaluka_button" />
-
-   <Button
-       android:id="@+id/capljina_button"
-       android:layout_width="342dp"
-       android:layout_height="42dp"
-       android:layout_marginStart="32dp"
-       android:layout_marginTop="256dp"
-       android:background="#DCA39999"
-       android:text="čapljina"
-       android:textColor="#90FFFFFF"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/banjaluka_button" />
-
-   <Button
-       android:id="@+id/doboj_button"
-       android:layout_width="342dp"
-       android:layout_height="42dp"
-       android:layout_marginStart="32dp"
-       android:layout_marginTop="316dp"
-       android:background="#DCA39999"
-       android:text="doboj"
-       android:textColor="#90FFFFFF"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/banjaluka_button" />
-
-   <Button
-       android:id="@+id/gorazde_button"
-       android:layout_width="342dp"
-       android:layout_height="42dp"
-       android:layout_marginStart="32dp"
-       android:layout_marginTop="380dp"
-       android:background="#DCA39999"
-       android:text="goražde"
-       android:textColor="#90FFFFFF"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/banjaluka_button" />
-
-   <Button
-       android:id="@+id/bijeljina_button"
-       android:layout_width="342dp"
-       android:layout_height="42dp"
-       android:layout_marginStart="32dp"
-       android:layout_marginTop="80dp"
-       android:background="#DCA39999"
-       android:text="BIJELJINA"
-       android:textColor="#90FFFFFF"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/banjaluka_button" />
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical" />
+   </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,49 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ng2">
 
     <Button
         android:id="@+id/logout"
         android:layout_width="149dp"
         android:layout_height="45dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="16dp"
-        android:background="#BEDFB2B2"
+        android:layout_marginTop="32dp"
+        android:background="@color/purple"
+        android:backgroundTint="@color/purple"
+        android:gravity="center"
         android:text="Log out"
-        android:textColor="#886868"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.46"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/policy_text" />
-
-    <TextView
-        android:id="@+id/account_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="41dp"
-        android:layout_marginEnd="232dp"
-        android:fontFamily="@font/open_sans_bold"
-        android:text="Account"
-        android:textColor="#BB8181"
-        android:textSize="40sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/username_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/martel"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.052"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/account_text" />
 
     <ImageView
         android:id="@+id/profile_icon"
@@ -58,19 +34,6 @@
         app:layout_constraintTop_toBottomOf="@+id/username_text"
         app:srcCompat="@drawable/person" />
 
-    <TextView
-        android:id="@+id/profile_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/open_sans_semibold"
-        android:text="Profile"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.19"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username_text" />
-
     <ImageView
         android:id="@+id/review_icon"
         android:layout_width="39dp"
@@ -83,34 +46,10 @@
         app:layout_constraintTop_toBottomOf="@+id/profile_icon"
         app:srcCompat="@drawable/rate" />
 
-    <TextView
-        android:id="@+id/review_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:fontFamily="@font/open_sans_semibold"
-        android:text="Your reviews"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.231"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_text" />
-
-    <View
-        android:layout_width="350dp"
-        android:layout_height="1dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="34dp"
-        android:layout_marginEnd="16dp"
-        android:background="#BB8181"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/review_text" />
-
     <ImageView
         android:id="@+id/feedback_icon"
-        android:layout_width="35dp"
-        android:layout_height="39dp"
+        android:layout_width="31dp"
+        android:layout_height="34dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="44dp"
         android:tint="#BB8181"
@@ -118,40 +57,16 @@
         app:layout_constraintTop_toBottomOf="@+id/review_icon"
         app:srcCompat="@drawable/message" />
 
-    <TextView
-        android:id="@+id/feedback_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="52dp"
-        android:fontFamily="@font/open_sans_semibold"
-        android:text="Submit your feedback."
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/feedback_icon"
-        app:layout_constraintTop_toBottomOf="@+id/review_text" />
-
     <ImageView
         android:id="@+id/policy_icon"
-        android:layout_width="57dp"
-        android:layout_height="71dp"
+        android:layout_width="55dp"
+        android:layout_height="62dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="8dp"
         android:tint="#BB8181"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/feedback_icon"
         app:srcCompat="@drawable/privacypolicy" />
-
-    <TextView
-        android:id="@+id/policy_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="28dp"
-        android:fontFamily="@font/open_sans_semibold"
-        android:text="Privacy Policy"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/policy_icon"
-        app:layout_constraintTop_toBottomOf="@+id/feedback_text" />
 
     <ImageView
         android:id="@+id/imageView9"
@@ -179,17 +94,6 @@
         app:layout_constraintTop_toBottomOf="@+id/textView9"
         app:srcCompat="@drawable/twitter" />
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Follow us on social media!"
-        android:textSize="17sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logout" />
-
     <ImageView
         android:id="@+id/imageView11"
         android:layout_width="39dp"
@@ -200,5 +104,111 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9"
         app:srcCompat="@drawable/fb" />
+
+    <TextView
+        android:id="@+id/account_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="232dp"
+        android:fontFamily="@font/open_sans_bold"
+        android:text="Account"
+        android:textColor="#BB8181"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/username_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/martel"
+        android:textColor="@color/textcolor"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.052"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/account_text" />
+
+    <TextView
+        android:id="@+id/profile_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/open_sans_semibold"
+        android:text="Profile"
+        android:textColor="@color/textcolor"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.19"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/username_text" />
+
+    <TextView
+        android:id="@+id/review_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/open_sans_semibold"
+        android:text="Your reviews"
+        android:textColor="@color/textcolor"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.231"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_text" />
+
+    <TextView
+        android:id="@+id/feedback_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="56dp"
+        android:fontFamily="@font/open_sans_semibold"
+        android:text="Submit your feedback"
+        android:textColor="@color/textcolor"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/feedback_icon"
+        app:layout_constraintTop_toBottomOf="@+id/review_text" />
+
+    <TextView
+        android:id="@+id/policy_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/open_sans_semibold"
+        android:text="Privacy Policy"
+        android:textColor="@color/textcolor"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/policy_icon"
+        app:layout_constraintTop_toBottomOf="@+id/feedback_text" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Follow us on social media!"
+        android:textColor="@color/textcolor"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logout" />
+
+    <View
+        android:layout_width="350dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="16dp"
+        android:background="#BB8181"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/review_text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

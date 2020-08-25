@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
+        <item>@font/alegreya_sans_sc_medium_italic</item>
+        <item>@font/aref_ruqaa</item>
+        <item>@font/condiment</item>
+        <item>@font/cormorant</item>
+        <item>@font/dancing_script</item>
         <item>@font/martel</item>
+        <item>@font/montserrat</item>
+        <item>@font/nunito_sans_bold_italic</item>
         <item>@font/open_sans_bold</item>
         <item>@font/open_sans_light</item>
         <item>@font/open_sans_semibold</item>
+        <item>@font/playfair_display</item>
+        <item>@font/playfair_display_bold_italic</item>
+        <item>@font/playfair_display_italic</item>
     </array>
 </resources>

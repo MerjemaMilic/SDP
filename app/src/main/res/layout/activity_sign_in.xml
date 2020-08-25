@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SignIn"
-    android:background="@color/background">
+    android:background="@drawable/ng2">
 
     <EditText
         android:id="@+id/email_rinput"
@@ -61,9 +61,9 @@
         android:id="@+id/login_button"
         android:layout_width="149dp"
         android:layout_height="51dp"
-        android:layout_marginStart="85dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="63dp"
-        android:layout_marginEnd="85dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="224dp"
         android:background="#BB8181"
         android:fontFamily="@font/open_sans_semibold"
@@ -79,7 +79,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/open_sans_light"
         android:gravity="center"
@@ -93,9 +93,9 @@
         android:id="@+id/register_button"
         android:layout_width="149dp"
         android:layout_height="51dp"
-        android:layout_marginStart="85dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="80dp"
-        android:layout_marginEnd="85dp"
+        android:layout_marginEnd="16dp"
         android:background="#C4C4C4"
         android:text="Register"
         android:textColor="#BB8181"

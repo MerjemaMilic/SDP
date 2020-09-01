@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
-        <activity android:name=".ProfileActivity" android:parentActivityName=".HomeActivity"></activity>
+        <activity android:name=".SelectedCategory" />
+        <activity
+            android:name=".ProfileActivity"
+            android:parentActivityName=".HomeActivity" />
         <activity android:name=".AdminActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".RegisterActivity" />

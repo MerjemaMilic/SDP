@@ -1,4 +1,4 @@
-package com.example.seniordesignproject;
+package com.example.seniordesignproject.Fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +12,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.seniordesignproject.MainActivity;
+import com.example.seniordesignproject.ProfileActivity;
+import com.example.seniordesignproject.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -20,6 +23,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 public class AccountFragment extends Fragment {
+    TextView profileText;
 
     @Nullable
     @Override
@@ -27,6 +31,8 @@ public class AccountFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_account, container, false);
         Button button = (Button) view.findViewById(R.id.logout);
         ImageView profile = (ImageView) view.findViewById(R.id.profile_icon);
+        profileText = view.findViewById(R.id.profile_text);
+
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,7 +66,13 @@ public class AccountFragment extends Fragment {
                 }
             });
          
-
+        profileText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
 
         return view;
 

@@ -21,10 +21,10 @@
        app:endIconMode="dropdown_menu"
        app:layout_constraintBottom_toBottomOf="parent"
        app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintHorizontal_bias="0.0"
+       app:layout_constraintHorizontal_bias="1.0"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintTop_toTopOf="parent"
-       app:layout_constraintVertical_bias="0.231"
+       app:layout_constraintVertical_bias="0.439"
        app:placeholderTextColor="@color/colorPrimary"
        app:prefixTextColor="#FFFFFF"
        app:startIconTint="@color/purple">
@@ -34,10 +34,8 @@
           android:id="@+id/dropdown_text"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:layout_marginTop="132dp"
-          android:backgroundTint="#FFFFFF"
-          android:textColor="@android:color/white"
-          android:textColorHint="#FFFFFF" />
+          android:backgroundTint="#000000"
+          android:textColor="@android:color/white" />
    </com.google.android.material.textfield.TextInputLayout>
 
    <TextView
@@ -52,45 +50,30 @@
        android:text="Add a rating"
        android:textColor="@color/white"
        android:textSize="40sp"
-       app:layout_constraintBottom_toTopOf="@+id/linearLayout"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintHorizontal_bias="0.0"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintTop_toTopOf="parent"
        app:layout_constraintVertical_bias="0.0" />
 
-
-   <com.google.android.material.textfield.TextInputLayout
-       android:id="@+id/input_layoutsub"
-       style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:backgroundTint="@color/background"
-       android:hint="Choose neighborhood"
-       android:outlineSpotShadowColor="@color/background"
-       android:paddingStart="2dp"
-       app:boxBackgroundMode="outline"
-       app:boxStrokeColor="@color/purple"
-       app:endIconMode="dropdown_menu"
-       app:layout_constraintBottom_toBottomOf="parent"
+   <ImageView
+       android:id="@+id/imageView4"
+       android:layout_width="525dp"
+       android:layout_height="256dp"
+       android:layout_marginTop="32dp"
+       android:tint="#999966CC"
        app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintHorizontal_bias="0.0"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintTop_toTopOf="parent"
-       app:layout_constraintVertical_bias="0.392"
-       app:placeholderTextColor="@color/colorPrimary"
-       app:prefixTextColor="#FFFFFF"
-       app:startIconTint="@color/purple">
+       app:srcCompat="@drawable/houses" />
 
-
-      <AutoCompleteTextView
-          android:id="@+id/dropdown_textsub"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:backgroundTint="#FFFFFF"
-          android:textColor="@android:color/white"
-          android:textColorHint="#FFFFFF" />
-   </com.google.android.material.textfield.TextInputLayout>
+   <Spinner
+       android:id="@+id/cityspin"
+       android:layout_width="409dp"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="444dp"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

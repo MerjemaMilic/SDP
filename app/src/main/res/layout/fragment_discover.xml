@@ -1,161 +1,406 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@drawable/ng2">
 
-
-   <Button
-       android:id="@+id/banjaluka_button"
-       android:layout_width="342dp"
-       android:layout_height="42dp"
-       android:layout_marginStart="32dp"
-       android:layout_marginTop="30dp"
-       android:background="@color/discover"
-       android:hint="BANJA LUKA"
-       android:text="BANJA LUKA"
-       android:textColor="@color/textcolor"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
-   <Button
-       android:id="@+id/bihac_button"
-       android:layout_width="342dp"
-       android:layout_height="42dp"
-       android:layout_marginStart="32dp"
-       android:layout_marginTop="16dp"
-       android:background="@color/discover"
-       android:text="BIHAĆ"
-       android:textColor="@color/textcolor"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/banjaluka_button" />
-
-   <Button
-       android:id="@+id/bosanskagradiska_button2"
-       android:layout_width="342dp"
-       android:layout_height="42dp"
-       android:layout_marginStart="32dp"
-       android:layout_marginTop="140dp"
-       android:background="@color/discover"
-       android:text="bosanska gradiška"
-       android:textColor="@color/textcolor"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/banjaluka_button" />
-
-   <Button
-       android:id="@+id/cazin_button"
-       android:layout_width="342dp"
-       android:layout_height="42dp"
-       android:layout_marginStart="32dp"
-       android:layout_marginTop="196dp"
-       android:background="@color/discover"
-       android:text="cazin"
-       android:textColor="@color/textcolor"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/banjaluka_button" />
-
-   <Button
-       android:id="@+id/capljina_button"
-       android:layout_width="342dp"
-       android:layout_height="42dp"
-       android:layout_marginStart="32dp"
-       android:layout_marginTop="256dp"
-       android:background="@color/discover"
-       android:text="čapljina"
-       android:textColor="@color/textcolor"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/banjaluka_button" />
-
-   <Button
-       android:id="@+id/doboj_button"
-       android:layout_width="342dp"
-       android:layout_height="42dp"
-       android:layout_marginStart="32dp"
-       android:layout_marginTop="316dp"
-       android:background="@color/discover"
-       android:text="doboj"
-       android:textColor="@color/textcolor"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/banjaluka_button" />
-
-   <Button
-       android:id="@+id/gorazde_button"
-       android:layout_width="342dp"
-       android:layout_height="42dp"
-       android:layout_marginStart="32dp"
-       android:layout_marginTop="380dp"
-       android:background="@color/discover"
-       android:text="goražde"
-       android:textColor="@color/textcolor"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/banjaluka_button" />
-
-   <Button
-       android:id="@+id/bijeljina_button"
-       android:layout_width="342dp"
-       android:layout_height="42dp"
-       android:layout_marginStart="32dp"
-       android:layout_marginTop="80dp"
-       android:background="@color/discover"
-       android:text="BIJELJINA"
-       android:textColor="@color/textcolor"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/banjaluka_button" />
-
    <LinearLayout
-       android:id="@+id/linearLayout"
-       android:layout_width="404dp"
-       android:layout_height="59dp"
-       android:layout_margin="20dp"
-       android:background="@drawable/shape"
-       android:orientation="horizontal"
-       android:padding="7dp"
-       app:layout_constraintBottom_toBottomOf="parent"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toTopOf="parent"
-       app:layout_constraintVertical_bias="0.121">
-
-      <SearchView
-          android:layout_width="388dp"
-          android:layout_height="wrap_content"
-          android:background="#9FC4C4C4"
-          android:iconifiedByDefault="false"
-          android:queryHint="Search for cities" />
-   </LinearLayout>
-
-   <TextView
-       android:id="@+id/discover_text"
-       android:layout_width="wrap_content"
+       android:layout_width="match_parent"
        android:layout_height="wrap_content"
-       android:layout_alignParentTop="true"
-       android:layout_marginStart="16dp"
-       android:layout_marginTop="16dp"
-       android:layout_marginEnd="16dp"
-       android:fontFamily="@font/open_sans_bold"
-       android:text="Discover"
-       android:textColor="#BB8181"
-       android:textSize="40sp"
-       app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintHorizontal_bias="0.0"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toTopOf="parent"
-       app:layout_constraintVertical_bias="0.0" />
+      android:orientation="horizontal"
+      android:id="@+id/user_info_discover"
+      android:weightSum="4"
+      android:padding="8dp"
+      android:background="#609966CC">
 
-   <ScrollView
-       android:layout_width="409dp"
-       android:layout_height="28dp"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toTopOf="parent">
+      <ImageView
+          android:layout_width="60dp"
+          android:layout_height="60dp"
+         android:src="@drawable/ic_baseline_account_circle_24" />
 
       <LinearLayout
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:orientation="vertical" />
-   </ScrollView>
+         android:orientation="vertical"
+         android:layout_marginLeft="8dp"
+         android:layout_gravity="center_vertical">
+
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+            android:id="@+id/username_discover"
+            android:textSize="22sp"
+            android:textColor="@color/white"
+            android:text="Username" />
+
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+            android:text="Normal"
+            android:textSize="16sp"
+            android:id="@+id/member_type"
+            android:textColor="@color/white" />
+
+      </LinearLayout>
+
+   </LinearLayout>
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:weightSum="4"
+      android:padding="8dp" >
+
+      <androidx.cardview.widget.CardView
+         android:id="@+id/card_view_review"
+         android:layout_marginRight="8dp"
+         app:cardCornerRadius="8dp"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+         android:layout_weight="1">
+         
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="vertical">
+            
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+               android:layout_gravity="center_horizontal"
+               android:src="@drawable/ic_baseline_event_note_24" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+               android:text="Review"
+               android:fontFamily="sans-serif"
+                android:layout_gravity="center_horizontal"
+                android:textSize="@dimen/max_slider_indicator_size"/>
+            
+            
+            
+            
+         </LinearLayout>         
+         
+         
+      </androidx.cardview.widget.CardView>
+
+      <androidx.cardview.widget.CardView
+          android:id="@+id/card_view_history"
+          android:layout_marginRight="8dp"
+          app:cardCornerRadius="8dp"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1">
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_baseline_history_24" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="History"
+                android:fontFamily="sans-serif"
+                android:layout_gravity="center_horizontal"
+                android:textSize="@dimen/max_slider_indicator_size"/>
+
+
+
+
+         </LinearLayout>
+
+
+      </androidx.cardview.widget.CardView>
+
+      <androidx.cardview.widget.CardView
+          android:id="@+id/card_view_third"
+          android:layout_marginRight="8dp"
+          app:cardCornerRadius="8dp"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1">
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_baseline_event_note_24" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Review"
+                android:fontFamily="sans-serif"
+                android:layout_gravity="center_horizontal"
+                android:textSize="@dimen/max_slider_indicator_size"/>
+
+
+
+
+         </LinearLayout>
+
+
+      </androidx.cardview.widget.CardView>
+
+      <androidx.cardview.widget.CardView
+          android:id="@+id/card_view_notifications"
+          android:layout_marginRight="8dp"
+          app:cardCornerRadius="8dp"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1">
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_baseline_notifications_24" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Notifications"
+                android:fontFamily="sans-serif"
+                android:layout_gravity="center_horizontal"
+                android:textSize="@dimen/max_slider_indicator_size"/>
+
+
+
+
+         </LinearLayout>
+
+
+      </androidx.cardview.widget.CardView>
+
+
+
+   </LinearLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   android:orientation="vertical"
+   android:padding="8dp">
+
+   <ss.com.bannerslider.Slider
+      android:id="@+id/banner_slider"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"  />
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="2dp">
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+   android:layout_alignParentLeft="true"
+   android:layout_alignParentStart="true"
+   android:layout_centerVertical="true"
+   android:gravity="center_vertical"
+   android:text="Look Book"
+   android:fontFamily="sans-serif"
+   android:textColor="@color/white"
+   android:textSize="18sp" />
+
+
+
+
+
+</RelativeLayout>
+
+ <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/recycler_look_book"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:orientation="horizontal" />
+
+</LinearLayout>
+
+
+   <!--
+
+      <Button
+          android:id="@+id/banjaluka_button"
+          android:layout_width="342dp"
+          android:layout_height="42dp"
+          android:layout_marginStart="32dp"
+          android:layout_marginTop="30dp"
+          android:background="@color/discover"
+          android:hint="BANJA LUKA"
+          android:text="BANJA LUKA"
+          android:textColor="@color/textcolor"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+      <Button
+          android:id="@+id/bihac_button"
+          android:layout_width="342dp"
+          android:layout_height="42dp"
+          android:layout_marginStart="32dp"
+          android:layout_marginTop="16dp"
+          android:background="@color/discover"
+          android:text="BIHAĆ"
+          android:textColor="@color/textcolor"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/banjaluka_button" />
+
+      <Button
+          android:id="@+id/bosanskagradiska_button2"
+          android:layout_width="342dp"
+          android:layout_height="42dp"
+          android:layout_marginStart="32dp"
+          android:layout_marginTop="140dp"
+          android:background="@color/discover"
+          android:text="bosanska gradiška"
+          android:textColor="@color/textcolor"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/banjaluka_button" />
+
+      <Button
+          android:id="@+id/cazin_button"
+          android:layout_width="342dp"
+          android:layout_height="42dp"
+          android:layout_marginStart="32dp"
+          android:layout_marginTop="196dp"
+          android:background="@color/discover"
+          android:text="cazin"
+          android:textColor="@color/textcolor"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/banjaluka_button" />
+
+      <Button
+          android:id="@+id/capljina_button"
+          android:layout_width="342dp"
+          android:layout_height="42dp"
+          android:layout_marginStart="32dp"
+          android:layout_marginTop="256dp"
+          android:background="@color/discover"
+          android:text="čapljina"
+          android:textColor="@color/textcolor"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/banjaluka_button" />
+
+      <Button
+          android:id="@+id/doboj_button"
+          android:layout_width="342dp"
+          android:layout_height="42dp"
+          android:layout_marginStart="32dp"
+          android:layout_marginTop="316dp"
+          android:background="@color/discover"
+          android:text="doboj"
+          android:textColor="@color/textcolor"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/banjaluka_button" />
+
+      <Button
+          android:id="@+id/gorazde_button"
+          android:layout_width="342dp"
+          android:layout_height="42dp"
+          android:layout_marginStart="32dp"
+          android:layout_marginTop="380dp"
+          android:background="@color/discover"
+          android:text="goražde"
+          android:textColor="@color/textcolor"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/banjaluka_button" />
+
+      <Button
+          android:id="@+id/bijeljina_button"
+          android:layout_width="342dp"
+          android:layout_height="42dp"
+          android:layout_marginStart="32dp"
+          android:layout_marginTop="80dp"
+          android:background="@color/discover"
+          android:text="BIJELJINA"
+          android:textColor="@color/textcolor"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/banjaluka_button" />
+
+      <LinearLayout
+          android:id="@+id/linearLayout"
+          android:layout_width="404dp"
+          android:layout_height="59dp"
+          android:layout_margin="20dp"
+          android:background="@drawable/shape"
+          android:orientation="horizontal"
+          android:padding="7dp"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintVertical_bias="0.121">
+
+         <SearchView
+             android:layout_width="388dp"
+             android:layout_height="wrap_content"
+             android:background="#9FC4C4C4"
+             android:iconifiedByDefault="false"
+             android:queryHint="Search for cities" />
+      </LinearLayout>
+
+      <TextView
+          android:id="@+id/discover_text"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentTop="true"
+          android:layout_marginStart="16dp"
+          android:layout_marginTop="16dp"
+          android:layout_marginEnd="16dp"
+          android:fontFamily="@font/open_sans_bold"
+          android:text="Discover"
+          android:textColor="#BB8181"
+          android:textSize="40sp"
+          app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.0"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintVertical_bias="0.0" />
+
+      <ScrollView
+          android:layout_width="409dp"
+          android:layout_height="28dp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent">
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="vertical" />
+      </ScrollView>
+
+   -->
+
+
+
+   </LinearLayout>

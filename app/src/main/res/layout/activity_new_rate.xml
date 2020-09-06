@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ng2"
+    tools:context=".NewRateActivity">
+
+
+<!--
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/city"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:boxStrokeColor="@color/colorPrimary"
+        app:counterEnabled="true"
+        app:counterMaxLength="15"
+        app:errorEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/cityedit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="City"
+            android:inputType="textPersonName"
+            android:maxLength="15"
+            android:textColor="@color/white" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    -->
+
+    <TextView
+        android:id="@+id/addnewreviewtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="232dp"
+        android:fontFamily="@font/open_sans_bold"
+        android:text="Add new review"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Spinner
+        android:id="@+id/cityedit"
+        style="@style/Widget.AppCompat.Spinner"
+        android:layout_width="409dp"
+        android:layout_height="37dp"
+        android:backgroundTint="@color/white"
+        android:layout_marginTop="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addnewreviewtext"></Spinner>
+<!--
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/neighborhood"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:outlineAmbientShadowColor="@color/colorPrimary"
+        android:outlineSpotShadowColor="@color/colorPrimary"
+        app:boxStrokeColor="@color/colorPrimary"
+        app:counterEnabled="true"
+        app:counterMaxLength="50"
+        android:layout_marginTop="15dp"
+        app:errorEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cityedit">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/neighborhoodedit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Neighborhood"
+            android:inputType="textPostalAddress"
+            android:maxLength="50"
+            android:textColor="@color/white" />
+    </com.google.android.material.textfield.TextInputLayout>
+    -->
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:outlineAmbientShadowColor="@color/colorPrimary"
+        android:outlineSpotShadowColor="@color/colorPrimary"
+        app:boxStrokeColor="@color/colorPrimary"
+        app:counterEnabled="true"
+        app:counterMaxLength="500"
+        app:errorEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cityedit">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/contentedit"
+            android:layout_width="match_parent"
+            android:layout_height="92dp"
+            android:hint="Content"
+            android:inputType="textMultiLine"
+            android:maxLength="500"
+            android:textColor="@color/white" />
+
+
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/submitreview"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="120dp"
+        android:layout_height="59dp"
+        android:background="#BB8181"
+        android:layout_marginBottom="24dp"
+        android:layout_marginRight="40dp"
+        android:text="submit"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/backfromnewratebutton"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="120dp"
+        android:layout_height="59dp"
+        android:layout_marginBottom="24dp"
+        app:strokeColor="#FFFFFF"
+        android:layout_marginLeft="40dp"
+        android:text="Back"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <RatingBar
+        android:id="@+id/sociability_rating_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="40dp"
+        android:progressTint="@color/colorPrimary"
+        android:stepSize="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/content" />
+
+    <RatingBar
+        android:id="@+id/safety_rating_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="40dp"
+        android:progressTint="@color/colorPrimary"
+        android:stepSize="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sociability_rating_bar" />
+
+    <RatingBar
+        android:id="@+id/pricing_rating_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="40dp"
+        android:progressTint="@color/colorPrimary"
+        android:stepSize="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/safety_rating_bar" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/baloo"
+        android:text="Sociability"
+
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/sociability_rating_bar"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/content" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="36dp"
+        android:fontFamily="@font/baloo"
+        android:text="Safety"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/safety_rating_bar"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+
+        android:fontFamily="@font/baloo"
+        android:text="Pricing"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/sociability_rating_bar"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

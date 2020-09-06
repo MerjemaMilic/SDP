@@ -6,38 +6,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/ng2">
 
-
-   <com.google.android.material.textfield.TextInputLayout
-       android:id="@+id/input_layout"
-       style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:backgroundTint="@color/background"
-       android:hint="Choose city"
-       android:outlineSpotShadowColor="@color/background"
-       android:paddingStart="2dp"
-       app:boxBackgroundMode="outline"
-       app:boxStrokeColor="@color/purple"
-       app:endIconMode="dropdown_menu"
-       app:layout_constraintBottom_toBottomOf="parent"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintHorizontal_bias="1.0"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toTopOf="parent"
-       app:layout_constraintVertical_bias="0.439"
-       app:placeholderTextColor="@color/colorPrimary"
-       app:prefixTextColor="#FFFFFF"
-       app:startIconTint="@color/purple">
-
-
-      <AutoCompleteTextView
-          android:id="@+id/dropdown_text"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:backgroundTint="#000000"
-          android:textColor="@android:color/white" />
-   </com.google.android.material.textfield.TextInputLayout>
-
    <TextView
        android:id="@+id/discover_text2"
        android:layout_width="wrap_content"
@@ -56,24 +24,74 @@
        app:layout_constraintTop_toTopOf="parent"
        app:layout_constraintVertical_bias="0.0" />
 
-   <ImageView
-       android:id="@+id/imageView4"
-       android:layout_width="525dp"
-       android:layout_height="256dp"
-       android:layout_marginTop="32dp"
-       android:tint="#999966CC"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toTopOf="parent"
-       app:srcCompat="@drawable/houses" />
-
-   <Spinner
-       android:id="@+id/cityspin"
-       android:layout_width="409dp"
+   <com.google.android.material.floatingactionbutton.FloatingActionButton
+       android:id="@+id/addratebutton"
+       android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       android:layout_marginTop="444dp"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toTopOf="parent" />
+       android:layout_marginEnd="16dp"
+       android:layout_marginBottom="16dp"
+       android:clickable="true"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:srcCompat="@android:drawable/ic_input_add" />
+
+   <!--
+
+      <com.google.android.material.textfield.TextInputLayout
+          android:id="@+id/input_layout"
+          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:backgroundTint="@color/background"
+          android:hint="Choose city"
+          android:outlineSpotShadowColor="@color/background"
+          android:paddingStart="2dp"
+          app:boxBackgroundMode="outline"
+          app:boxStrokeColor="@color/purple"
+          app:endIconMode="dropdown_menu"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="1.0"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintVertical_bias="0.439"
+          app:placeholderTextColor="@color/colorPrimary"
+          app:prefixTextColor="#FFFFFF"
+          app:startIconTint="@color/purple">
+
+
+         <AutoCompleteTextView
+             android:id="@+id/dropdown_text"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:backgroundTint="#000000"
+             android:textColor="@android:color/white" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+
+
+      <ImageView
+          android:id="@+id/imageView4"
+          android:layout_width="525dp"
+          android:layout_height="256dp"
+          android:layout_marginTop="32dp"
+          android:tint="#999966CC"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          app:srcCompat="@drawable/houses" />
+
+      <Spinner
+          android:id="@+id/cityspin"
+          android:layout_width="409dp"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="444dp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+
+   -->
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -114,7 +114,7 @@ public class SignIn extends AppCompatActivity {
                     Toast.makeText(SignIn.this, "Error occured!", Toast.LENGTH_SHORT).show();
 
                 }
-                if(femail.equals("admin@gmail.com")) {
+                if(femail.equals("admin@admin.com")) {
                     if(fpassword.equals("admin123")) {
                         Intent inttoAdmin = new Intent(SignIn.this, AdminActivity.class);
                         startActivity(inttoAdmin);

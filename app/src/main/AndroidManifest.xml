@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.seniordesignproject">
+    package="com.example.seniordesignproject"
+    android:installLocation="auto">
 
     <application
         android:allowBackup="true"
@@ -9,7 +10,36 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
-        <activity android:name=".SelectedCategory" />
+        <activity android:name=".RateDetails2"></activity>
+        <activity android:name=".DiscoverRateDetailsActivity" />
+        <activity android:name=".RateDetails" />
+        <activity android:name=".Categories.AneksActivity" />
+        <activity android:name=".Categories.SkenderijaActivity" />
+        <activity android:name=".Categories.VracaActivity" />
+        <activity android:name=".Categories.SedrenikActivity" />
+        <activity android:name=".Categories.PofaliciActivity" />
+        <activity android:name=".Categories.OtokaActivity" />
+        <activity android:name=".Categories.MojmiloActivity" />
+        <activity android:name=".Categories.KovaciciActivity" />
+        <activity android:name=".Categories.MarijinDvorActivity" />
+        <activity android:name=".Categories.KovaciActivity" />
+        <activity android:name=".Categories.KosevoActivity" />
+        <activity android:name=".Categories.HridJarcedoliActivity" />
+        <activity android:name=".Categories.HrasnoActivity" />
+        <activity android:name=".Categories.GrbavicaActivity" />
+        <activity android:name=".Categories.FerhadijaActivity" />
+        <activity android:name=".Categories.DolacMaltaActivity" />
+        <activity android:name=".Categories.DobrinjaActivity" />
+        <activity android:name=".Categories.CengicVilaActivity" />
+        <activity android:name=".Categories.BistrikActivity" />
+        <activity android:name=".Categories.BetanijaActivity" />
+        <activity android:name=".Categories.BascarsijaActivity" />
+        <activity android:name=".Categories.AlipasinoPoljeActivity" />
+        <activity android:name=".Categories.AlipasinMostActivity" />
+        <activity android:name=".Categories.AlifakovacActivity" />
+        <activity android:name=".YourReviewsActivity" />
+        <activity android:name=".NewRateActivity" />
+        <activity android:name=".SubmitFeedbackActivity" />
         <activity
             android:name=".ProfileActivity"
             android:parentActivityName=".HomeActivity" />

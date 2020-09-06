@@ -15,6 +15,8 @@ import android.widget.Toast;
 import com.example.seniordesignproject.MainActivity;
 import com.example.seniordesignproject.ProfileActivity;
 import com.example.seniordesignproject.R;
+import com.example.seniordesignproject.SubmitFeedbackActivity;
+import com.example.seniordesignproject.YourReviewsActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -23,7 +25,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 public class AccountFragment extends Fragment {
-    TextView profileText;
+    TextView profileText, feedbackText, reviewText;
 
     @Nullable
     @Override
@@ -31,7 +33,11 @@ public class AccountFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_account, container, false);
         Button button = (Button) view.findViewById(R.id.logout);
         ImageView profile = (ImageView) view.findViewById(R.id.profile_icon);
+        ImageView feedbackimage = (ImageView) view.findViewById(R.id.feedback_icon);
+        reviewText = view.findViewById(R.id.review_text);
+
         profileText = view.findViewById(R.id.profile_text);
+        feedbackText = view.findViewById(R.id.feedback_text);
 
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,6 +79,31 @@ public class AccountFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+        feedbackText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), SubmitFeedbackActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        feedbackimage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), SubmitFeedbackActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        reviewText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), YourReviewsActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         return view;
 

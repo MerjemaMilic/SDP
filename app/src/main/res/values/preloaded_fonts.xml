@@ -15,5 +15,6 @@
         <item>@font/playfair_display</item>
         <item>@font/playfair_display_bold_italic</item>
         <item>@font/playfair_display_italic</item>
+        <item>@font/roboto_bold</item>
     </array>
 </resources>

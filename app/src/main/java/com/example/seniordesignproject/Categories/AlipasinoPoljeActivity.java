@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.example.seniordesignproject.Model.Rate;
@@ -24,12 +25,22 @@ public class AlipasinoPoljeActivity extends AppCompatActivity {
 
     private RecyclerView mFirestoreList;
 
+    RatingBar safetyavg,sociabilityavg,pricingavg;
+
     private FirestoreRecyclerAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 setContentView(R.layout.activity_alipasino_polje);
+        safetyavg = findViewById(R.id.safetyaverage);
+        sociabilityavg = findViewById(R.id.sociabilityaverage);
+        pricingavg = findViewById(R.id.pricingaverage);
+
+
+        safetyavg.setRating(3);
+        sociabilityavg.setRating(1);
+        pricingavg.setRating(4);
 
 
         firebaseFirestore = FirebaseFirestore.getInstance();

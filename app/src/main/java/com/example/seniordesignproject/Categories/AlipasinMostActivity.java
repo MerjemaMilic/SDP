@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.example.seniordesignproject.Model.Rate;
@@ -26,6 +27,8 @@ public class AlipasinMostActivity extends AppCompatActivity {
 
     private FirestoreRecyclerAdapter adapter;
 
+    RatingBar safetyavg,sociabilityavg,pricingavg;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +36,14 @@ public class AlipasinMostActivity extends AppCompatActivity {
         setContentView(R.layout.activity_alipasin_most);
         firebaseFirestore = FirebaseFirestore.getInstance();
         mFirestoreList = findViewById(R.id.bihacrecycler);
+        safetyavg = findViewById(R.id.safetyaverage);
+        sociabilityavg = findViewById(R.id.sociabilityaverage);
+        pricingavg = findViewById(R.id.pricingaverage);
 
+
+        safetyavg.setRating(4);
+        sociabilityavg.setRating(2);
+        pricingavg.setRating(3);
         Query query = firebaseFirestore.collection("reviews").whereEqualTo("neighborhood","Alipasin Most");
 
         FirestoreRecyclerOptions<Rate> options = new FirestoreRecyclerOptions.Builder<Rate>()

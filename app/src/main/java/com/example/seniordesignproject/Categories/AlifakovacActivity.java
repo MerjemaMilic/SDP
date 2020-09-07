@@ -55,9 +55,9 @@ public class AlifakovacActivity extends AppCompatActivity {
         pricingavg = findViewById(R.id.pricingaverage);
 
 
-        safetyavg.setRating(4);
+        safetyavg.setRating(3);
         sociabilityavg.setRating(2);
-        pricingavg.setRating(3);
+        pricingavg.setRating(4);
 
 
 

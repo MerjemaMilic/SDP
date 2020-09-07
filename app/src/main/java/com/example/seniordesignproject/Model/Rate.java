@@ -17,6 +17,7 @@ public class Rate {
         this.safety = safety;
         this.pricing = pricing;
         this.sociability = sociability;
+
     }
 
     public Rate(String neighborhood, String content, int safety, int pricing, int sociability) {
@@ -102,7 +103,34 @@ private String user_id;
 private int safety;
 private int pricing;
 private int sociability;
+   private double avgsafetyRating;
+   private double numratings;
 
+    public double getNumratings() {
+        return numratings;
+    }
 
+    public Rate(String neighborhood, String content, String rate_id, String user_id, int safety, int pricing, int sociability, double avgsafetyRating, double numratings) {
+        this.neighborhood = neighborhood;
+        this.content = content;
+        this.rate_id = rate_id;
+        this.user_id = user_id;
+        this.safety = safety;
+        this.pricing = pricing;
+        this.sociability = sociability;
+        this.avgsafetyRating = avgsafetyRating;
+        this.numratings = numratings;
+    }
 
+    public void setNumratings(double numratings) {
+        this.numratings = numratings;
+    }
+
+    public double getAvgsafetyRating() {
+        return avgsafetyRating;
+    }
+
+    public void setAvgsafetyRating(double avgsafetyRating) {
+        this.avgsafetyRating = avgsafetyRating;
+    }
 }

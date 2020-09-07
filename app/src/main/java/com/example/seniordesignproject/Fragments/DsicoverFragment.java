@@ -49,9 +49,8 @@ public class DsicoverFragment extends Fragment {
         banjaluka = view.findViewById(R.id.banjalukabutton);
         bihac = view.findViewById(R.id.bihacbutton);
         bijeljina = view.findViewById(R.id.bijeljinabutton);
-        capljina = view.findViewById(R.id.capljinabutton);
+//     capljina = view.findViewById(R.id.capljinabutton);
         cazin = view.findViewById(R.id.cazinbutton);
-        cazin = view.findViewById(R.id.capljinabutton);
         doboj = view.findViewById(R.id.dobojbutton);
         gorazde = view.findViewById(R.id.gorazdebutton);
         gracanica = view.findViewById(R.id.gracanicabutton);
@@ -106,7 +105,7 @@ public class DsicoverFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
+/*
         capljina.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -114,7 +113,7 @@ public class DsicoverFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
+*/
         doboj.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

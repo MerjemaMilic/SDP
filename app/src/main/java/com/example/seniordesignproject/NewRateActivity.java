@@ -24,6 +24,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -53,6 +54,8 @@ public class NewRateActivity extends AppCompatActivity {
     int[] ratesaf;
     List<Integer> list = new ArrayList<Integer>();
     FirebaseFirestore database;
+    double numofreviews = 0;
+
 
     String updateID, updateNeighborhood, updateContent;
 
@@ -140,7 +143,6 @@ public class NewRateActivity extends AppCompatActivity {
         });
 
         safetyRating1 = safety.getNumStars();
-        for(int i = 0; i < list.size(); i++)
         list.add(safetyRating1);
 
 
@@ -171,21 +173,7 @@ public class NewRateActivity extends AppCompatActivity {
 
 
 
-        database.collection("reviews")
-                .whereEqualTo("safety", true)
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                Toast.makeText(NewRateActivity.this, "" + document.getData(), Toast.LENGTH_SHORT).show();
-                            }
-                        } else {
-                            Toast.makeText(NewRateActivity.this,"Message",Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
+        DocumentReference rateref = database.collection("reviews").document();
 
 
 
@@ -204,7 +192,7 @@ public class NewRateActivity extends AppCompatActivity {
 
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
                 String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
-                DocumentReference newRateRef = database.collection("reviews").document();
+                DocumentReference newRateRef = database.collection("reviews").document(userID);
                  Rate rate = new Rate();
 
                 rate.setRate_id(newRateRef.getId());
@@ -214,6 +202,8 @@ public class NewRateActivity extends AppCompatActivity {
                 rate.setSafety(safetyR);
                 rate.setPricing(pricingR);
                 rate.setSociability(sociabilityR);
+
+
 
 
 
@@ -244,7 +234,6 @@ public class NewRateActivity extends AppCompatActivity {
 
 
 
-        Toast.makeText(NewRateActivity.this, total + "" + list.size(),Toast.LENGTH_SHORT).show();
 
 
 

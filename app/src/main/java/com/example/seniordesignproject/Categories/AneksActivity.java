@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.example.seniordesignproject.Model.Rate;
@@ -26,10 +27,20 @@ public class AneksActivity extends AppCompatActivity {
 
     private FirestoreRecyclerAdapter adapter;
 
+    RatingBar safetyavg,sociabilityavg,pricingavg;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aneks);
+        safetyavg = findViewById(R.id.safetyaverage);
+        sociabilityavg = findViewById(R.id.sociabilityaverage);
+        pricingavg = findViewById(R.id.pricingaverage);
+
+
+        safetyavg.setRating(4);
+        sociabilityavg.setRating(2);
+        pricingavg.setRating(3);
 
 
         firebaseFirestore = FirebaseFirestore.getInstance();

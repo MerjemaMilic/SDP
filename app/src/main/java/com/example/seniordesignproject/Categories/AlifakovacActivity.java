@@ -15,6 +15,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.seniordesignproject.Model.Konverzija;
 import com.example.seniordesignproject.Model.Rate;
 import com.example.seniordesignproject.R;
 import com.example.seniordesignproject.RateDetails;
@@ -25,12 +26,27 @@ import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
+import com.google.common.collect.Lists;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.BufferedInputStream;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.util.Collections;
+import com.google.android.gms.tasks.Task;
+
+import static com.google.api.client.util.Lists.newArrayList;
 
 public class AlifakovacActivity extends AppCompatActivity {
     private FirebaseFirestore firebaseFirestore;
@@ -43,6 +59,10 @@ public class AlifakovacActivity extends AppCompatActivity {
 
     private FirestoreRecyclerAdapter adapter;
 
+    URL urlObj;
+    HttpURLConnection urlConnection;
+    String TOKEN;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +73,41 @@ public class AlifakovacActivity extends AppCompatActivity {
         safetyavg = findViewById(R.id.safetyaverage);
         sociabilityavg = findViewById(R.id.sociabilityaverage);
         pricingavg = findViewById(R.id.pricingaverage);
+
+        try{
+            InputStream is = getResources().openRawResource(R.raw.secret);
+            GoogleCredential credentials = GoogleCredential.fromStream(is).createScoped(Lists.newArrayList("https://www.googleapis.com/auth/cloud-platform"));
+            credentials.refreshToken();
+            Toast.makeText(AlifakovacActivity.this, "test" + credentials, Toast.LENGTH_SHORT).show();
+            TOKEN = credentials.getAccessToken();
+            Log.d("TOKEN", TOKEN);
+            try{
+            String urlPitanja = "https://firestore.googleapis.com/v1/projects/SeniorDesignProject/databases/(default)/documents/reviews?access_token=";
+            urlObj = new URL(urlPitanja + URLEncoder.encode(TOKEN, "UTF-8"));
+            urlConnection = (HttpURLConnection) urlObj.openConnection();
+            urlConnection.setRequestMethod("GET");
+            urlConnection.setRequestProperty("Content-Type", "application/json");
+            urlConnection.setRequestProperty("Accept", "application/json");
+            InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+                Toast.makeText(AlifakovacActivity.this, "test", Toast.LENGTH_SHORT).show();
+                String rezultat = Konverzija.convertStreamToString(in);
+            Log.d("dokumenti",rezultat);
+            Toast.makeText(AlifakovacActivity.this, "" + rezultat, Toast.LENGTH_SHORT).show();
+            JSONObject jo = new JSONObject(rezultat);
+
+            JSONArray documents = jo.getJSONArray("documents");
+            }
+            catch(Exception e){
+
+                Toast.makeText(AlifakovacActivity.this, "2" + e.getMessage(), Toast.LENGTH_SHORT).show();
+
+            }
+        }
+        catch(Exception e){
+
+            Toast.makeText(AlifakovacActivity.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+
+        }
 
 
         safetyavg.setRating(3);

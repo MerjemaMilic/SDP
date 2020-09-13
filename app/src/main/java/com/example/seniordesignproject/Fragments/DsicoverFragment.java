@@ -11,7 +11,6 @@ import android.widget.TextView;
 import com.example.seniordesignproject.Categories.AlifakovacActivity;
 import com.example.seniordesignproject.Categories.AlipasinMostActivity;
 import com.example.seniordesignproject.Categories.AlipasinoPoljeActivity;
-import com.example.seniordesignproject.Categories.AneksActivity;
 import com.example.seniordesignproject.Categories.BascarsijaActivity;
 import com.example.seniordesignproject.Categories.BetanijaActivity;
 import com.example.seniordesignproject.Categories.BistrikActivity;

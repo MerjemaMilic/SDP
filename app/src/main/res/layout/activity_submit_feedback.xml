@@ -68,7 +68,7 @@
                 android:layout_height="wrap_content"
                 android:includeFontPadding="false"
 
-                android:text=", please tell us your opinion on our services.
+                android:text=", please please take a moment to leave your feedback.
              "
                 android:textColor="@color/white"
                 android:textSize="17sp" />
@@ -88,7 +88,7 @@
             android:layout_height="wrap_content"
             app:boxStrokeColor="@color/colorPrimary"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:hint="Leave us your opinion"
+            android:hint="Request a new neighborhood"
             app:counterMaxLength="2000"
             android:textColorHint="@color/colorPrimary"
             android:layout_marginBottom="10dp">

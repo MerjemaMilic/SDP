@@ -11,9 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
         <activity android:name=".RateDetails2"></activity>
-        <activity android:name=".DiscoverRateDetailsActivity" />
         <activity android:name=".RateDetails" />
-        <activity android:name=".Categories.AneksActivity" />
         <activity android:name=".Categories.SkenderijaActivity" />
         <activity android:name=".Categories.VracaActivity" />
         <activity android:name=".Categories.SedrenikActivity" />

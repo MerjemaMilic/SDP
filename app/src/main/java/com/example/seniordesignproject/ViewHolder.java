@@ -26,12 +26,12 @@ public class ViewHolder extends RecyclerView.ViewHolder {
             @Override
             public boolean onLongClick(View v) {
                 mClickListener.onItemLongClick(v, getAdapterPosition());
-                return true;            }
+                return true;
+            }
         });
 
         mNeighbourhood = itemView.findViewById(R.id.neighborhood_name);
         mContent = itemView.findViewById(R.id.review_content);
-
 
 
     }

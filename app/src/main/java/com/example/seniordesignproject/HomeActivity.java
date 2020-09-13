@@ -21,7 +21,6 @@ public class HomeActivity extends AppCompatActivity {
     BottomNavigationView bottomNav;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,21 +37,21 @@ public class HomeActivity extends AppCompatActivity {
     private BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Fragment selectedFragment = null;
-                switch (item.getItemId()) {
-                    case R.id.nav_home:
-                        selectedFragment = new DsicoverFragment();
-                        break;
-                    case R.id.nav_rate:
-                        selectedFragment = new RateFragment();
-                        break;
-                    case R.id.nav_profile:
-                        selectedFragment = new AccountFragment();
-                        break;
+            Fragment selectedFragment = null;
+            switch (item.getItemId()) {
+                case R.id.nav_home:
+                    selectedFragment = new DsicoverFragment();
+                    break;
+                case R.id.nav_rate:
+                    selectedFragment = new RateFragment();
+                    break;
+                case R.id.nav_profile:
+                    selectedFragment = new AccountFragment();
+                    break;
 
-                }
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,selectedFragment).commit();
-          return true;
+            }
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
+            return true;
         }
     };
 

@@ -18,6 +18,7 @@ import com.example.seniordesignproject.Model.Average;
 import com.example.seniordesignproject.Model.Rate;
 import com.example.seniordesignproject.NewRateActivity;
 import com.example.seniordesignproject.R;
+import com.example.seniordesignproject.RateDetails2;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.database.DataSnapshot;
@@ -39,13 +40,26 @@ public class GrbavicaActivity extends AppCompatActivity {
     private FirestoreRecyclerAdapter adapter;
     List<Integer> list = new ArrayList<Integer>();
     FirebaseFirestore database;
+
+
+
+    List<Integer> listsafety = new ArrayList<Integer>();
+    List<Integer> listpricing = new ArrayList<Integer>();
+    List<Integer> listsociability = new ArrayList<Integer>();
+
     double numofreviews = 0;
-    long numberRating = 0;
+    float numberRating = (float) 0.0;
+    float pricingnumberRating = (float) 0.0;
+    float sociabilitynumberRating = (float) 0.0;
+
+
 
     DatabaseReference referenceNeighborhoods;
     DatabaseReference referenceRatings;
     DatabaseReference referenceRatingsgrb;
-    List<Integer> listsafety = new ArrayList<Integer>();
+
+
+
 
     RatingBar safetyavg, sociabilityavg, pricingavg;
 
@@ -56,10 +70,10 @@ public class GrbavicaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grbavica);
         safetyavg = findViewById(R.id.safetyaverage);
+        pricingavg = findViewById(R.id.pricingaverage);
+        sociabilityavg = findViewById(R.id.sociabilityaverage);
 
-       // Intent i = getIntent();
-        //final long avgRate = i.getLongExtra("grbrating", 4);
-        //Toast.makeText(GrbavicaActivity.this, avgRate + "",Toast.LENGTH_SHORT).show();
+
         firebaseFirestore = FirebaseFirestore.getInstance();
         mFirestoreList = findViewById(R.id.livnorecycler);
         referenceRatingsgrb = FirebaseDatabase.getInstance().getReference("ratings/Grbavica");
@@ -68,28 +82,43 @@ public class GrbavicaActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()) {
-                    long totalsafety = 0;
-                    long totalpricing = 0;
-                    long totalsociability = 0;
+                        float totalsafety = 0;
+                        float totalpricing = 0;
+                        float totalsociability = 0;
 
-                    for(DataSnapshot ds : dataSnapshot.getChildren()) {
-                        Average average = ds.getValue(Average.class);
-                        Integer safetynow = Integer.valueOf(average.getSafetyrate());
-                        Integer pricingnow = Integer.valueOf(average.getPricingrate());
-                        Integer sociabilitynow = Integer.valueOf(average.getSociabilityrate());
-                        totalsafety = totalsafety +  safetynow;
-                        totalpricing +=  pricingnow;
-                        totalsociability +=  sociabilitynow;
-                        listsafety.add(average.getSafetyrate());
-                        numberRating = totalsafety / listsafety.size();
+                        for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                            Average average = ds.getValue(Average.class);
+
+                            float safetynow = average.getSafetyrate();
+                            float pricingnow = average.getPricingrate();
+                            float sociabilitynow = average.getSociabilityrate();
+
+                            // calculating sum
+                            totalsafety = totalsafety + safetynow;
+                            totalpricing = totalpricing + pricingnow;
+                            totalsociability = totalsociability + sociabilitynow;
+
+
+                            //adding individual rating integers to lists
+                            listsafety.add(average.getSafetyrate());
+                            listpricing.add(average.getPricingrate());
+                            listsociability.add(average.getSociabilityrate());
+
+
+                            //calculating averages
+                            pricingnumberRating = totalpricing / listpricing.size();
+                            numberRating = totalsafety / listsafety.size();
+                            sociabilitynumberRating = totalsociability / listsociability.size();
 
 
                     }
 
-                    Toast.makeText(GrbavicaActivity.this, "totalsafety" + totalsafety, Toast.LENGTH_LONG).show();
-                    Toast.makeText(GrbavicaActivity.this, "totalsafety" + listsafety.size(), Toast.LENGTH_LONG).show();
-                    Toast.makeText(GrbavicaActivity.this, "" + numberRating, Toast.LENGTH_LONG).show();
+                   // Toast.makeText(GrbavicaActivity.this, "totalsafety" + totalsafety, Toast.LENGTH_LONG).show();
+                   // Toast.makeText(GrbavicaActivity.this, "totalsafety" + listsafety.size(), Toast.LENGTH_LONG).show();
+                   // Toast.makeText(GrbavicaActivity.this, "" + numberRating, Toast.LENGTH_LONG).show();
                     safetyavg.setRating(numberRating);
+                    pricingavg.setRating(pricingnumberRating);
+                    sociabilityavg.setRating(sociabilitynumberRating);
 
 
 
@@ -119,12 +148,17 @@ public class GrbavicaActivity extends AppCompatActivity {
             @Override
             public GrbavicaActivity.ProductsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
                 View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_view, parent, false);
+
+
+
+
+
                 return new GrbavicaActivity.ProductsViewHolder(view);
             }
 
             @Override
             protected void onBindViewHolder(@NonNull GrbavicaActivity.ProductsViewHolder productsViewHolder, int i, @NonNull Rate rate) {
-                productsViewHolder.list_neighborhood.setText(rate.getNeighborhood());
+               productsViewHolder.list_neighborhood.setText(rate.getNeighborhood());
                 productsViewHolder.list_content.setText(rate.getContent());
 
             }
@@ -138,11 +172,24 @@ public class GrbavicaActivity extends AppCompatActivity {
         private TextView list_content;
 
 
-        public ProductsViewHolder(@NonNull View itemView) {
+        public ProductsViewHolder(@NonNull final View itemView) {
             super(itemView);
 
             list_neighborhood = itemView.findViewById(R.id.neighborhood_name);
             list_content = itemView.findViewById(R.id.review_content);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Intent i = new Intent(itemView.getContext(), RateDetails2.class);
+                    i.putExtra("neighborhood", list_neighborhood.getText().toString());
+                    i.putExtra("content", list_content.getText().toString());
+
+                    itemView.getContext().startActivity(i);
+
+                }
+            });
         }
     }
 

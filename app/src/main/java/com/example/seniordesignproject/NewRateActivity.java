@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -15,6 +16,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.RatingBar;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.seniordesignproject.Categories.AlifakovacActivity;
@@ -57,10 +59,10 @@ public class NewRateActivity extends AppCompatActivity {
     private Button submit, back;
     private Spinner spinnerCity;
     private IRateInterface mInterface;
-    RatingBar safety, pricing,sociability;
+    RatingBar safety, pricing, sociability;
     int safetyRating;
     int safetyRating1;
-  int average = 0;
+    int average = 0;
     int pricingRating;
     int total = 0;
     String cityitem;
@@ -79,14 +81,8 @@ public class NewRateActivity extends AppCompatActivity {
     List<Integer> listsafety = new ArrayList<Integer>();
 
 
-
-
-
-
-
     String updateID, updateNeighborhood, updateContent;
-    DatabaseReference reff,reff1;
-
+    DatabaseReference reff, reff1;
 
 
     @Override
@@ -108,22 +104,20 @@ public class NewRateActivity extends AppCompatActivity {
         referenceNeighborhoods = FirebaseDatabase.getInstance().getReference("neighborhoods");
 
 
-
-
         reff.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.exists())
+                if (dataSnapshot.exists())
                     numberRating = (dataSnapshot.getChildrenCount());
 
-                for( DataSnapshot ds :dataSnapshot.getChildren()) {
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     Average average = ds.getValue(Average.class);
                     Integer safetynow = Integer.valueOf(average.getSafetyrate());
                     Integer pricingnow = Integer.valueOf(average.getPricingrate());
                     Integer sociabilitynow = Integer.valueOf(average.getSociabilityrate());
-                    totalsafety +=  safetynow;
-                    totalpricing +=  pricingnow;
-                    totalsociability +=  sociabilitynow;
+                    totalsafety += safetynow;
+                    totalpricing += pricingnow;
+                    totalsociability += sociabilitynow;
                 }
             }
 
@@ -133,13 +127,13 @@ public class NewRateActivity extends AppCompatActivity {
             }
         });
 
-       back.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               Intent intent = new Intent(NewRateActivity.this,HomeActivity.class);
-               startActivity(intent);
-           }
-       });
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(NewRateActivity.this, HomeActivity.class);
+                startActivity(intent);
+            }
+        });
 
         final List<String> neighborhoods = new ArrayList<>();
         neighborhoods.add("Choose a neighborhood");
@@ -148,8 +142,8 @@ public class NewRateActivity extends AppCompatActivity {
         neighborhoods.add("Alipasino Polje");
         neighborhoods.add("Bascarsija");
         neighborhoods.add("Betanija");
-        neighborhoods.add("Bistrik ");
-        neighborhoods.add("Cengic Vila ");
+        neighborhoods.add("Bistrik");
+        neighborhoods.add("Cengic Vila");
         neighborhoods.add("Dobrinja");
         neighborhoods.add("Dolac Malta");
         neighborhoods.add("Ferhadija");
@@ -166,52 +160,53 @@ public class NewRateActivity extends AppCompatActivity {
         neighborhoods.add("Sedrenik");
         neighborhoods.add("Skenderija");
         neighborhoods.add("Vraca");
-        final ArrayAdapter<String> neighborhoodAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,neighborhoods);
+        final ArrayAdapter<String> neighborhoodAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, neighborhoods);
         neighborhoodAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerCity.setAdapter(neighborhoodAdapter);
 
-       spinnerCity.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-           @Override
-           public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        spinnerCity.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                ((TextView) parent.getChildAt(0)).setTextColor(Color.WHITE);
                 cityitem = spinnerCity.getSelectedItem().toString();
 
-           }
 
-           @Override
-           public void onNothingSelected(AdapterView<?> parent) {
+            }
 
-           }
-       });
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                Toast.makeText(NewRateActivity.this, "Please choose a neighborhood", Toast.LENGTH_LONG).show();
+            }
+        });
 
 
         safety.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-                 safetyRating = (int) ratingBar.getRating();
-                 switch((int) rating) {
-                     case 0: {
-                      average = 0;
-                     }
-                     case 1: {
-                         average +=1;
-                     }
-                     case 2: {
-                         average += 2;
+                safetyRating = (int) ratingBar.getRating();
+                switch ((int) rating) {
+                    case 0: {
+                        average = 0;
+                    }
+                    case 1: {
+                        average += 1;
+                    }
+                    case 2: {
+                        average += 2;
 
-                     }
+                    }
 
-                     case 3: {
-                         average += 3;
-                     }
+                    case 3: {
+                        average += 3;
+                    }
 
-                     case 4: {
-                         average += 4;
-                     }
-                     case 5: {
-                         average += 5;
-                     }
-                 }
-
+                    case 4: {
+                        average += 4;
+                    }
+                    case 5: {
+                        average += 5;
+                    }
+                }
 
 
             }
@@ -219,12 +214,6 @@ public class NewRateActivity extends AppCompatActivity {
 
         safetyRating1 = safety.getNumStars();
         list.add(safetyRating1);
-
-
-
-       // Toast.makeText(NewRateActivity.this, "" + list.size(),Toast.LENGTH_SHORT).show();
-
-     //   ratesaf[0] = safetyRating;
 
 
         sociability.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
@@ -236,7 +225,6 @@ public class NewRateActivity extends AppCompatActivity {
         });
 
 
-
         pricing.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
@@ -246,20 +234,14 @@ public class NewRateActivity extends AppCompatActivity {
         });
 
 
-
-
         DocumentReference rateref = database.collection("reviews").document();
-
-
-
-
 
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String neighborhood = cityitem;
-           //     String neighborhood = mneighborhood.getEditText().getText().toString();
+                //     String neighborhood = mneighborhood.getEditText().getText().toString();
                 String content = mcontent.getEditText().getText().toString();
                 int safetyR = safetyRating;
                 int sociabilityR = sociabilityRating;
@@ -267,8 +249,8 @@ public class NewRateActivity extends AppCompatActivity {
 
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
                 String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
-                DocumentReference newRateRef = database.collection("reviews").document(userID);
-                 Rate rate = new Rate();
+                DocumentReference newRateRef = database.collection("reviews").document();
+                Rate rate = new Rate();
 
                 rate.setRate_id(newRateRef.getId());
                 rate.setNeighborhood(neighborhood);
@@ -277,58 +259,16 @@ public class NewRateActivity extends AppCompatActivity {
                 rate.setSafety(safetyR);
                 rate.setPricing(pricingR);
                 rate.setSociability(sociabilityR);
+
                 addNeighborhood();
-                  //addData();
-
-                referenceRatingsgrb.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if(dataSnapshot.exists()) {
-
-                            for(DataSnapshot ds : dataSnapshot.getChildren()) {
-                                Average average = ds.getValue(Average.class);
-                                Integer safetynow = Integer.valueOf(average.getSafetyrate());
-                                Integer pricingnow = Integer.valueOf(average.getPricingrate());
-                                Integer sociabilitynow = Integer.valueOf(average.getSociabilityrate());
-                                totalsafety +=  safetynow;
-                                totalpricing +=  pricingnow;
-                                totalsociability +=  sociabilitynow;
-                                listsafety.add(average.getSafetyrate());
-
-                            }
-                            Toast.makeText(NewRateActivity.this, "" + listsafety.size(), Toast.LENGTH_LONG).show();
-                            numberRating = totalsafety / listsafety.size();
-                            Toast.makeText(NewRateActivity.this, "" + numberRating, Toast.LENGTH_LONG).show();
-                            Intent i = new Intent(NewRateActivity.this, GrbavicaActivity.class);
-                            i.putExtra("grbrating", numberRating);
-                            startActivity(i);
-
-
-
-
-
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
-
-
-
-
-
 
 
                 newRateRef.set(rate).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        if(task.isSuccessful()) {
-                            numofreviews += 1;
-                            Toast.makeText(NewRateActivity.this,"Your review has been published",Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(NewRateActivity.this,HomeActivity.class);
+                        if (task.isSuccessful()) {
+                            Toast.makeText(NewRateActivity.this, "Your review has been published", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(NewRateActivity.this, HomeActivity.class);
                             startActivity(intent);
 
 
@@ -337,93 +277,28 @@ public class NewRateActivity extends AppCompatActivity {
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(NewRateActivity.this,e.getMessage(),Toast.LENGTH_SHORT).show();
+                        Toast.makeText(NewRateActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
 
                     }
                 });
-               // uploadData(neighborhood,content,safetyR,sociabilityR,pricingR);
+                // uploadData(neighborhood,content,safetyR,sociabilityR,pricingR);
 
             }
         });
 
 
-
-
-
-
-
-
-
-
-
-
     }
 
-    public void addData() {
-     int safetyRating = (int) safety.getRating();
-     int sociabilityRating = (int) sociability.getRating();
-     int pricingRating = (int) pricing.getRating();
-     String id = referenceRatings.push().getKey();
-     String neighborhood = spinnerCity.getSelectedItem().toString();
-
-
-        String averageRating;
-     String totalRating;
-     Average avg = new Average();
-     Rate rating = new Rate();
-     rating.setNeighborhood(neighborhood);
-     avg.setSafetyrate(safetyRating);
-     avg.setPricingrate(pricingRating);
-     avg.setSociabilityrate(sociabilityRating);
-     avg.setId(id);
-     avg.setNumberrating((int) (numberRating+1));// this is number of reviews
-        avg.setTotalsumsafety(totalsafety);
-        avg.setTotalsumpricing(totalpricing);
-        avg.setTotalsumsociability(totalsociability);
-      //  avg.setAveragerate(totalsafety / numberRating);
-      //  avg.setAveragepricingrate(totalpricing / numberRating);
-      //  avg.setAveragesociabilityrate(totalsociability / numberRating);
-        avg.setNeighborhoodname(neighborhood);
-    //    referenceRatings.child(String.valueOf(numberRating+1)).setValue(avg);
-
-
-
-        Toast.makeText(NewRateActivity.this, "Success rate", Toast.LENGTH_SHORT).show();
-    // reff.child(String.valueOf(numberRating+1)).setValue(avg);
-        // reff1.child(String.valueOf(numberRating+1)).setValue(avg);
-       // reff1.setValue(rating);
-
-        //DatabaseReference ref= FirebaseDatabase.getInstance().getReference("rate");
-       // Query query=ref.orderByChild("neighborhoodname").equalTo("0");
-
-       /* query.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for(DataSnapshot datas: dataSnapshot.getChildren()){
-                    String name=datas.child("averagesociabilityrate").getValue().toString();
-                    Toast.makeText(NewRateActivity.this, name + "",Toast.LENGTH_SHORT).show();
-                }
-            }
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Toast.makeText(NewRateActivity.this,   "FAIL",Toast.LENGTH_SHORT).show();
-
-            }
-        }); */
-
-
-    }
 
     public void addNeighborhood() {
         String nameNeighborhood = cityitem;
 
-        if(!TextUtils.isEmpty(nameNeighborhood)) {
+        if (!TextUtils.isEmpty(nameNeighborhood)) {
             String neighborhoodid = referenceNeighborhoods.push().getKey();
             Neighborhood neighborhood = new Neighborhood();
             neighborhood.setNeighborhoodName(nameNeighborhood);
             neighborhood.setId(neighborhoodid);
             referenceNeighborhoods.child(nameNeighborhood).setValue(neighborhood);
-            Toast.makeText(NewRateActivity.this, "Success", Toast.LENGTH_SHORT).show();
             referenceRatings = FirebaseDatabase.getInstance().getReference("ratings").child(nameNeighborhood);
             referenceRatingsgrb = FirebaseDatabase.getInstance().getReference("ratings/Grbavica");
 
@@ -436,56 +311,18 @@ public class NewRateActivity extends AppCompatActivity {
             avg.setPricingrate(pricingRating);
             avg.setSociabilityrate(sociabilityRating);
             avg.setId(id);
-           avg.setNumberrating(numberRating);// this is number of reviews
+            avg.setNumberrating(numberRating);// this is number of reviews
             avg.setTotalsumsafety(totalsafety);
             avg.setTotalsumpricing(totalpricing);
             avg.setTotalsumsociability(totalsociability);
             referenceRatings.child(id).setValue(avg);
 
 
-
-
-        }
-        else {
+        } else {
             Toast.makeText(NewRateActivity.this, "Please choose a neighborhood", Toast.LENGTH_SHORT).show();
         }
     }
 
 
-    public void uploadData(String neighborhood, String content, int safety, int pricing, int sociability) {
-        DocumentReference newRateRef = database.collection("reviews").document();
-        String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        Rate rate = new Rate();
-
-        rate.setRate_id(newRateRef.getId());
-        rate.setNeighborhood(neighborhood);
-        rate.setContent(content);
-        rate.setUser_id(userID);
-        rate.setSafety(safety);
-        rate.setPricing(pricing);
-        rate.setSociability(sociability);
-        rate.setAvgsafetyRating(safety);
-
-
-
-
-
-        newRateRef.set(rate).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                if(task.isSuccessful()) {
-                    Toast.makeText(NewRateActivity.this,"Your review has been published",Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(NewRateActivity.this,HomeActivity.class);
-                    startActivity(intent);
-                }
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(NewRateActivity.this,e.getMessage(),Toast.LENGTH_SHORT).show();
-
-            }
-        });
-    }
 
 }

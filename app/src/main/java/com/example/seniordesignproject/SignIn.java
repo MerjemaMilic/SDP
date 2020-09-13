@@ -97,7 +97,7 @@ public class SignIn extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (!task.isSuccessful()) {
-                                Toast.makeText(SignIn.this, "Login Error, please login again", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SignIn.this, "Please type valid e-mail and password.", Toast.LENGTH_SHORT).show();
 
                             } else {
                                 email.setError(null);

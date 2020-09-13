@@ -76,9 +76,7 @@ public class YourReviewsActivity extends AppCompatActivity {
                         pd.dismiss();
 
                         for (DocumentSnapshot doc : task.getResult()) {
-                      //     int i = (int) doc.get("safety");
-                      //     int j = (int) doc.get("sociability");
-                      //     int k = (int) doc.get("pricing");//if the field is Integer
+
                             task.getResult();
                             Rate rate = new Rate(doc.getString("neighborhood"), doc.getString("content"), doc.getString("rate_id"), doc.getString("user_id" ));
                             rateList.add(rate);

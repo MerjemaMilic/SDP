@@ -33,7 +33,7 @@ public class ProfileActivity extends AppCompatActivity {
     private TextInputLayout firstName, address;
 
     private Button update, back;
-    private TextInputEditText nameedit, addressedit,emailedit;
+    private TextInputEditText nameedit, addressedit, emailedit;
 
     TextView username, nameupper;
     FirebaseAuth mFirebaseAuth;
@@ -48,7 +48,6 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-        //    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         username = findViewById(R.id.profileemailtext);
 
         nameupper = findViewById(R.id.profilenametextupper);
@@ -92,14 +91,14 @@ public class ProfileActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(Void aVoid) {
                         DocumentReference docRef = fStore.collection("users").document(user.getUid());
-                        Map<String,Object> edited = new HashMap<>();
+                        Map<String, Object> edited = new HashMap<>();
                         edited.put("email", email1);
                         edited.put("firstName", nameedit.getText().toString());
-                        edited.put("postal_address",addressedit.getText().toString());
+                        edited.put("postal_address", addressedit.getText().toString());
                         docRef.update(edited).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
-                                startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+                                startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                                 finish();
                             }
                         });
@@ -117,20 +116,17 @@ public class ProfileActivity extends AppCompatActivity {
         });
 
 
-
-
-       back.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               Intent intToHome = new Intent(ProfileActivity.this, HomeActivity.class);
-               startActivity(intToHome);
-           }
-       });
-
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intToHome = new Intent(ProfileActivity.this, HomeActivity.class);
+                startActivity(intToHome);
+            }
+        });
 
 
         FirebaseAuth.AuthStateListener mAuthStateListener;
-       user = FirebaseAuth.getInstance().getCurrentUser();
+        user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
             String name = user.getEmail();
             username.setText(name);
